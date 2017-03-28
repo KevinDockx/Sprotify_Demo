@@ -64,6 +64,12 @@ namespace Sprotify.API
                 });
             }
 
+            // use default files (like index.html for root)
+            app.UseDefaultFiles();
+
+            // allow serving up files from wwwroot (eg images)
+            app.UseStaticFiles();
+
             AutoMapper.Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Entities.Playlist, Models.Playlist>();
