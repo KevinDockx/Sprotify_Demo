@@ -1,0 +1,26 @@
+C:\Realdolmen sessie\Sprotify\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.deps.json
+C:\Realdolmen sessie\Sprotify\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.runtimeconfig.json
+C:\Realdolmen sessie\Sprotify\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.runtimeconfig.dev.json
+C:\Realdolmen sessie\Sprotify\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.dll
+C:\Realdolmen sessie\Sprotify\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.pdb
+C:\Realdolmen sessie\Sprotify\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.AssemblyInfo.cs
+C:\Realdolmen sessie\Sprotify\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.dll
+C:\Realdolmen sessie\Sprotify\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.pdb
+C:\Realdolmen sessie\Sprotify\src\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.deps.json
+C:\Realdolmen sessie\Sprotify\src\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.runtimeconfig.json
+C:\Realdolmen sessie\Sprotify\src\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.runtimeconfig.dev.json
+C:\Realdolmen sessie\Sprotify\src\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.dll
+C:\Realdolmen sessie\Sprotify\src\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.pdb
+C:\Realdolmen sessie\Sprotify\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.csprojResolveAssemblyReference.cache
+C:\Realdolmen sessie\Sprotify\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.AssemblyInfo.cs
+C:\Realdolmen sessie\Sprotify\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.dll
+C:\Realdolmen sessie\Sprotify\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.pdb
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.deps.json
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.runtimeconfig.json
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.runtimeconfig.dev.json
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.dll
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\bin\Debug\netcoreapp1.1\Sprotify.API.pdb
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.csprojResolveAssemblyReference.cache
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.AssemblyInfo.cs
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.dll
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.pdb
