@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sprotify.API.Entities
 {
@@ -19,7 +20,10 @@ namespace Sprotify.API.Entities
         [Required]
         public Guid OwnerId { get; set; }
 
-        public ICollection<Song> Songs { get; set; }
-               = new List<Song>();
+        [ForeignKey("OwnerId")]
+        public virtual User Owner { get; set; }
+
+        public virtual ICollection<PlaylistSong> Songs { get; set; }
+               = new List<PlaylistSong>();
     }
 }

@@ -1,0 +1,11 @@
+C:\GitHub\KevinDockx\Sprotify_Demo\src\EvilCorp.IDP\bin\Debug\netcoreapp1.1\EvilCorp.IDP.deps.json
+C:\GitHub\KevinDockx\Sprotify_Demo\src\EvilCorp.IDP\bin\Debug\netcoreapp1.1\EvilCorp.IDP.runtimeconfig.json
+C:\GitHub\KevinDockx\Sprotify_Demo\src\EvilCorp.IDP\bin\Debug\netcoreapp1.1\EvilCorp.IDP.runtimeconfig.dev.json
+C:\GitHub\KevinDockx\Sprotify_Demo\src\EvilCorp.IDP\bin\Debug\netcoreapp1.1\EvilCorp.IDP.dll
+C:\GitHub\KevinDockx\Sprotify_Demo\src\EvilCorp.IDP\bin\Debug\netcoreapp1.1\EvilCorp.IDP.pdb
+C:\GitHub\KevinDockx\Sprotify_Demo\src\EvilCorp.IDP\obj\Debug\netcoreapp1.1\EvilCorp.IDP.csprojResolveAssemblyReference.cache
+C:\GitHub\KevinDockx\Sprotify_Demo\src\EvilCorp.IDP\obj\Debug\netcoreapp1.1\EvilCorp.IDP.csproj.CoreCompileInputs.cache
+C:\GitHub\KevinDockx\Sprotify_Demo\src\EvilCorp.IDP\obj\Debug\netcoreapp1.1\EvilCorp.IDP.AssemblyInfoInputs.cache
+C:\GitHub\KevinDockx\Sprotify_Demo\src\EvilCorp.IDP\obj\Debug\netcoreapp1.1\EvilCorp.IDP.AssemblyInfo.cs
+C:\GitHub\KevinDockx\Sprotify_Demo\src\EvilCorp.IDP\obj\Debug\netcoreapp1.1\EvilCorp.IDP.dll
+C:\GitHub\KevinDockx\Sprotify_Demo\src\EvilCorp.IDP\obj\Debug\netcoreapp1.1\EvilCorp.IDP.pdb

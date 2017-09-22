@@ -24,3 +24,5 @@ C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\obj\Debug\netcoreapp1.1\Spro
 C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.AssemblyInfo.cs
 C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.dll
 C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.pdb
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.csproj.CoreCompileInputs.cache
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.API\obj\Debug\netcoreapp1.1\Sprotify.API.AssemblyInfoInputs.cache

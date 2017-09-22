@@ -1,0 +1,168 @@
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
+<html class="no-focus-outline">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sprotify</title>
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+<body>
+    <div id="main">
+        <div class="root">
+            <div class="JKKBXFILp09eIN4WugwgY" style="background-image: linear-gradient(rgb(28, 27, 38), rgb(6, 6, 8) 85%)">
+            </div>
+            <div class="top-container">
+                <div class="nav-bar-container">
+                    <nav class="navBar">
+                        <a class="logo" asp-area="" asp-controller="Home" asp-action="Index">
+                            <img src="~/images/logo-icon.png" alt="Sprotify" title="Sprotify" />
+                        </a>
+                        <div class="navBar-expand">
+                            <ul class="navlist">
+                                <div class="group">
+                                    <li class="navlist-item">
+                                        <a class="navlist-itemlink" asp-area="" asp-controller="Music" asp-action="Search">
+                                            Search 
+                                            <div class="icon search-icon">
+                                                <svg viewBox="0 0 27 28" xmlns="http://www.w3.org/2000/svg"><title>Search</title><path d="M18.387 16.623C19.995 15.076 21 12.907 21 10.5 21 5.806 17.195 2 12.5 2 7.806 2 4 5.806 4 10.5S7.806 19 12.5 19c1.927 0 3.7-.65 5.125-1.73l4.4 5.153.76-.65-4.398-5.15zM12.5 18C8.364 18 5 14.636 5 10.5S8.364 3 12.5 3 20 6.364 20 10.5 16.636 18 12.5 18z" fill="currentColor" fill-rule="evenodd"></path></svg>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </div>
+                                <div class="group">
+                                    <li class="navlist-item">
+                                        <a class="navlist-itemlink" asp-area="" asp-controller="Music" asp-action="Browse">Browse</a>
+                                    </li>
+                                    <li class="navlist-item">
+                                        <a class="navlist-itemlink" asp-area="" asp-controller="Music" asp-action="YourMusic">Your Music</a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                        <vc:login-panel></vc:login-panel>
+                    </nav>
+                </div>
+                <div class="main-view-container">
+                    @RenderBody()
+                </div>
+            </div>
+            <div class="nowPlayingBar-container">
+                <footer class="now-playing-bar-container">
+                    <div class="now-playing-bar">
+                        <div class="now-playing-bar__left">
+                            <div class="now-playing"></div>
+                        </div>
+                        <div class="now-playing-bar__center">
+                            <div class="player-controls">
+                                <div class="player-controls__buttons">
+                                    <button class="control-button spoticon-shuffle-16" title="Enable shuffle"></button>
+                                    <button class="control-button spoticon-skip-back-16" title="Previous"></button>
+                                    <button class="control-button spoticon-play-16 control-button--circled" title="Play"></button>
+                                    <button class="control-button spoticon-skip-forward-16" title="Next"></button>
+                                    <button class="control-button spoticon-repeat-16" title="Enable repeat"></button>
+                                </div>
+                                <div class="playback-bar">
+                                    <div class="playback-bar__progress-time">0:00</div>
+                                    <div class="progress-bar">
+                                        <div class="middle-align progress-bar__bg">
+                                            <div class="progress-bar__fg" style="width: 0%;"></div>
+                                            <div class="middle-align progress-bar__slider" style="left: 0%;"></div>
+                                        </div>
+                                    </div><div class="playback-bar__progress-time">0:00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="now-playing-bar__right">
+                            <div class="now-playing-bar__right__inner">
+                                <div class="extra-controls">
+                                    <span class="connect-device-picker">
+                                        <div class="connect-device-list-container">
+                                            <div class="connect-title">
+                                                <span class="connect-title__text">Connect to a device</span>
+                                                <a class="connect-title__help" href="https://www.spotify.com/connect/?utm_source=wp-picker&amp;utm_medium=web" target="_blank"><img src="/static/assets/images/connect_help.png" title="What is Spotify Connect?"></a>
+                                            </div>
+                                            <div class="connect-header">
+                                                <img class="connect-header__image" src="/static/assets/connect_header@1x.png">
+                                            </div>
+                                            <ul class="connect-device-list">
+                                                <button class="media connect-device-list-item">
+                                                    <div class="media__img connect-device-list-item__icon">
+                                                        <div class="device spoticon-device-other-32"></div>
+                                                    </div>
+                                                    <div class="media__bd">
+                                                        <span class="connect-device-list-item__device-subtitle">Spotify Web Player</span>
+                                                        <span class="connect-device-list-item__device-title">
+                                                            <span class="connect-device-list-item__connect-icon spoticon-spotify-connect-16"></span>
+                                                            <!-- react-text: 571 -->Spotify Connect<!-- /react-text -->
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            </ul>
+                                        </div><button class="spoticon-devices-16 control-button"></button>
+                                    </span><div class="volume-bar"><button class="spoticon-volume-16 control-button volume-bar__icon"></button><div class="progress-bar"><div class="middle-align progress-bar__bg"><div class="progress-bar__fg" style="width: 100%;"></div><div class="middle-align progress-bar__slider" style="left: 100%;"></div></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- react-empty: 103 -->
+                </footer>
+            </div>
+        </div>
+        @*<nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                        <img src="~/images/logo-icon.png" alt="Sprotify" title="Sprotify" />
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right nav-main">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="content-wrapper">
+            @RenderBody()
+        </div>*@
+    </div>
+    
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Sprotify.API.Models
 {
@@ -10,6 +7,6 @@ namespace Sprotify.API.Models
         public Guid Id { get; set; }
         public string Title { get; set; }
         public string Band { get; set; }
-        public Guid PlaylistId { get; set; }
+        public TimeSpan Duration { get; set; }
     }
 }

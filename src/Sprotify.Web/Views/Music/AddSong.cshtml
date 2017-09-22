@@ -1,0 +1,46 @@
+﻿@model AddSongModel
+@{ 
+    ViewData["Title"] = "Add Song";
+}
+
+<div class="hw-accelerate">
+    <section class="content playlist contentSpacing">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-lg-12 col-xl-12 col-sticky">
+                    <h2 class="_136vzZKMy7E_xDfv7uATJ_">Add Song</h2>
+                    <form asp-action="AddSong" asp-route-id="@ViewData["playlistId"]" method="post">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label asp-for="Title" class="col-md-2 control-label"></label>
+                                <div class="col-md-10">
+                                    <input asp-for="Title" class="form-control" />
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Band" class="col-md-2 control-label"></label>
+                                <div class="col-md-10">
+                                    <input asp-for="Band" class="form-control" />
+                                    <span asp-validation-for="Band" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Duration" class="col-md-2 control-label"></label>
+                                <div class="col-md-1">
+                                    <input asp-for="Duration" class="form-control" placeholder="00:00:00" />
+                                    <span asp-validation-for="Duration" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <button class="btn btn-green" type="submit">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

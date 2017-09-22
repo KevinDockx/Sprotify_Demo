@@ -1,0 +1,58 @@
+﻿@model LoginViewModel
+
+@{
+    Layout = "_SprotifyLayout";
+}
+
+<div class="container-fluid login">
+    <div class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <a class="btn btn-sm btn-block btn-facebook" target="_parent" role="button" href="https://www.facebook.com/v2.3/dialog/oauth?client_id=174829003346&amp;state=AQDti_31Ek9cTSuwqhCG5oKdB-Rmf3oh9luvH3OrOxh78O5f-c7H4mwNWt-dhupH9fgFE7R-F5ewLIcO&amp;redirect_uri=https%3A%2F%2Faccounts.spotify.com%2Fapi%2Ffacebook%2Foauth%2Faccess_token">Log in with Facebook</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="divider">
+                    <strong class="divider-title ng-binding">or</strong>
+                </div>
+            </div>
+        </div>
+
+        <form asp-route="Login" novalidate="">
+            <input type="hidden" asp-for="ReturnUrl" />
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Partial("_ValidationSummary")
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label asp-for="Username" class="control-label sr-only">Username or email address</label>
+                    <input asp-for="Username" class="form-control input-with-feedback" placeholder="Username or email address" required="" sp-disallow-chars=":%&amp;'`´&quot;" sp-disallow-chars-model="usernameDisallowedChars" autocapitalize="off" autocomplete="off" autocorrect="off" autofocus="autofocus" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label asp-for="Password" class="control-label sr-only">Password</label>
+                    <input type="password" asp-for="Password" class="form-control input-with-feedback" placeholder="Password" required="" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                </div>
+            </div>
+            <div class="row row-submit">
+                @if (Model.AllowRememberLogin)
+                {
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="checkbox">
+                            <label asp-for="RememberLogin">
+                                <input asp-for="RememberLogin"> Remember me <span class="control-indicator"></span>
+                            </label>
+                        </div>
+                    </div>
+                }
+                <div class="col-xs-12 col-sm-6">
+                    <button class="btn btn-sm btn-block btn-green">Log In</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

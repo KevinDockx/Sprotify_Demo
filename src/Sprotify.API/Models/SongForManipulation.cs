@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Sprotify.API.Models
 {
@@ -14,5 +11,8 @@ namespace Sprotify.API.Models
 
         [MaxLength(150)]
         public virtual string Band { get; set; }
+
+        [Required]
+        public TimeSpan Duration { get; set; }
     }
 }

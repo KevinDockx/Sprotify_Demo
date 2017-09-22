@@ -1,0 +1,11 @@
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.Web\bin\Debug\netcoreapp1.1\Sprotify.Web.deps.json
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.Web\bin\Debug\netcoreapp1.1\Sprotify.Web.runtimeconfig.json
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.Web\bin\Debug\netcoreapp1.1\Sprotify.Web.runtimeconfig.dev.json
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.Web\bin\Debug\netcoreapp1.1\Sprotify.Web.dll
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.Web\bin\Debug\netcoreapp1.1\Sprotify.Web.pdb
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.Web\obj\Debug\netcoreapp1.1\Sprotify.Web.csprojResolveAssemblyReference.cache
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.Web\obj\Debug\netcoreapp1.1\Sprotify.Web.csproj.CoreCompileInputs.cache
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.Web\obj\Debug\netcoreapp1.1\Sprotify.Web.AssemblyInfoInputs.cache
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.Web\obj\Debug\netcoreapp1.1\Sprotify.Web.AssemblyInfo.cs
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.Web\obj\Debug\netcoreapp1.1\Sprotify.Web.dll
+C:\GitHub\KevinDockx\Sprotify_Demo\src\Sprotify.Web\obj\Debug\netcoreapp1.1\Sprotify.Web.pdb

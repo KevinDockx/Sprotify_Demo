@@ -1,0 +1,100 @@
+﻿@model PlaylistDetails
+@{
+    ViewData["Title"] = Model.Title;
+    var idx = 1;
+}
+
+<div class="hw-accelerate">
+    <div>
+        <section class="content playlist contentSpacing">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-3 col-xl-4 col-sticky">
+                        <header class="entity-info">
+                            <div class="media-object">
+                                <div class="hoverable">
+                                    <div class="react-contextmenu-wrapper">
+                                        <div class="cover-art shadow light actionable">
+                                            <div>
+                                                <div class="icon">
+                                                    <svg width="80" height="81" viewBox="0 0 80 81" xmlns="http://www.w3.org/2000/svg">
+                                                        <title>Playlist Icon</title>
+                                                        <path d="M25.6 11.565v45.38c-2.643-3.27-6.68-5.37-11.2-5.37-7.94 0-14.4 6.46-14.4 14.4s6.46 14.4 14.4 14.4 14.4-6.46 14.4-14.4v-51.82l48-10.205V47.2c-2.642-3.27-6.678-5.37-11.2-5.37-7.94 0-14.4 6.46-14.4 14.4s6.46 14.4 14.4 14.4S80 64.17 80 56.23V0L25.6 11.565zm-11.2 65.61c-6.176 0-11.2-5.025-11.2-11.2 0-6.177 5.024-11.2 11.2-11.2 6.176 0 11.2 5.023 11.2 11.2 0 6.174-5.026 11.2-11.2 11.2zm51.2-9.745c-6.176 0-11.2-5.024-11.2-11.2 0-6.174 5.024-11.2 11.2-11.2 6.176 0 11.2 5.026 11.2 11.2 0 6.178-5.026 11.2-11.2 11.2z" fill="currentColor" fill-rule="evenodd"></path>
+                                                    </svg>
+                                                </div>
+                                                <div class="cover-art-image cover-art-image-loaded"></div>
+                                            </div>
+                                            <button class="cover-art-playback">
+                                                <svg class="icon-play" viewBox="0 0 85 100">
+                                                    <path fill="currentColor" d="M81 44.6c5 3 5 7.8 0 10.8L9 98.7c-5 3-9 .7-9-5V6.3c0-5.7 4-8 9-5l72 43.3z">
+                                                        <title>PLAY</title>
+                                                    </path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mo-info">
+                                        <div class="react-contextmenu-wrapper">
+                                            <div class="mo-info-name" title="@Model.Title">@Model.Title</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mo-owner">
+                                    <span>By</span>
+                                    <span><a asp-controller="User" asp-action="Info" asp-route-owner="@Model.OwnerId">Wesley Cabus</a></span>
+                                </div>
+                            </div>
+                            <div class="media-bd">
+                                <div class="entity-name">
+                                    <h2>@Model.Title</h2>
+                                    <div>
+                                        <span>By</span>
+                                        <span><a>Wesley Cabus</a></span>
+                                    </div>
+                                </div>
+                                @if (Model.Songs?.Any() == true)
+                                {
+                                    <p class="text-silence entity-additional-info">@Model.Songs.Count() songs</p>
+                                }
+                                <p class="text-silence entity-additional-info">@Model.Description</p>
+                                <button class="btn btn-green">PLAY</button><br/>
+                                <a class="btn btn-green" asp-action="AddSong" asp-route-id="@Model.Id">ADD SONGS</a>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="col-xs-12 col-lg-9 col-xl-8">
+                        <section class="tracklist-container">
+                            <ol class="tracklist">
+                                @foreach (var song in Model.Songs)
+                                {
+                                    <li class="tracklist-row" role="button" tabindex="0">
+                                        <div class="tracklist-col position-outer">
+                                            <div class="play-pause top-align">
+                                                <svg class="icon-play" viewBox="0 0 85 100"><path fill="currentColor" d="M81 44.6c5 3 5 7.8 0 10.8L9 98.7c-5 3-9 .7-9-5V6.3c0-5.7 4-8 9-5l72 43.3z"><title>PLAY</title></path></svg>
+                                            </div>
+                                            <div class="position top-align">@(idx++).</div>
+                                        </div>
+                                        <div class="tracklist-col name">
+                                            <div class="track-name-wrapper top-align">
+                                                <span class="track-name">@song.Title</span>
+                                                <span class="artists-album">
+                                                    <span>@song.Band</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        @*<div class="tracklist-col more"></div>*@
+                                        <div class="tracklist-col duration">
+                                            <div class="top-align">
+                                                <span class="total-duration">@song.Duration.ToString("m\\:ss")</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                            </ol>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -29,7 +29,8 @@ namespace Sprotify.API
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvcCore().AddJsonFormatters().AddDataAnnotations();
+            services.AddMvcCore().AddJsonFormatters().AddDataAnnotations()
+                .AddAuthorization();
                      
             // Never put a production connection string in an appsettings file.  
             // Use environment variables for that.
@@ -73,11 +74,22 @@ namespace Sprotify.API
             AutoMapper.Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Entities.Playlist, Models.Playlist>();
-                cfg.CreateMap<Entities.Playlist, Models.PlaylistWithSongs>();
+                cfg.CreateMap<Services.Models.PlaylistWithSongs, Models.PlaylistWithSongs>();
+                cfg.CreateMap<Models.PlaylistForCreation, Entities.Playlist>();
                 cfg.CreateMap<Entities.Song, Models.Song>();
+                cfg.CreateMap<Services.Models.SongWithPlaylistInfo, Models.SongInPlaylist>();
                 cfg.CreateMap<Models.SongForCreation, Entities.Song>();
                 cfg.CreateMap<Models.SongForUpdate, Entities.Song>().ReverseMap();
-                cfg.CreateMap<Entities.Song, Models.Song>();
+                cfg.CreateMap<Entities.User, Models.User>();
+                cfg.CreateMap<Entities.User, Models.UserWithPlaylists>();
+
+                cfg.CreateMap<Models.SongForPlaylist, Entities.PlaylistSong>();
+                
+                cfg.CreateMap<Entities.PlaylistSong, Models.SongInPlaylist>()
+                    .ForMember(x => x.Id, opt => opt.MapFrom(src => src.SongId))
+                    .ForMember(x => x.Title, opt => opt.MapFrom(src => src.Song.Title))
+                    .ForMember(x => x.Band, opt => opt.MapFrom(src => src.Song.Band))
+                    .ForMember(x => x.Duration, opt => opt.MapFrom(src => src.Song.Duration));
             });
 
             // test for, and if required, migrate the DB
@@ -85,6 +97,13 @@ namespace Sprotify.API
 
             // ensure seed data
             sprotifyContext.EnsureSeedDataForContext();
+
+            app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
+            {
+                Authority = "https://localhost:44375/",
+                RequireHttpsMetadata = true,
+                ApiName = "sprotifyapi"
+            });
            
             app.UseMvc();             
         }

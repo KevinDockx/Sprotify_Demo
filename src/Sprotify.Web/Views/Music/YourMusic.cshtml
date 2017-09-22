@@ -1,0 +1,77 @@
+﻿@using Sprotify.Web.Models.Music
+@model IEnumerable<PlaylistInYourMusic>
+@{
+    ViewData["Title"] = "Your Music";
+}
+
+<div class="hw-accelerate">
+    <section class="contentSpacing">
+        <div>
+            <div class="asideButton-container">
+                <nav class="A0f-D9GnabaNkGDu5722F">
+                    <ul class="_2qxszZDSg4070SwogL5b7O">
+                        <li class="_1IZEXeoITlpZoDbSTO79x4">
+                            <a class="Vg0L1vwJXv5JSYn-HUx0C _2rScaV3bBHoj7O47a_JnaH" asp-action="YourMusic">PLAYLISTS</a>
+                        </li>
+                        <li class="_1IZEXeoITlpZoDbSTO79x4">
+                            <a class="Vg0L1vwJXv5JSYn-HUx0C" asp-action="DailyMix">YOUR DAILY MIX</a>
+                        </li>
+                        <li class="_1IZEXeoITlpZoDbSTO79x4">
+                            <a class="Vg0L1vwJXv5JSYn-HUx0C" asp-action="Songs">SONGS</a>
+                        </li>
+                        <li class="_1IZEXeoITlpZoDbSTO79x4">
+                            <a class="Vg0L1vwJXv5JSYn-HUx0C" asp-action="Albums">ALBUMS</a>
+                        </li>
+                        <li class="_1IZEXeoITlpZoDbSTO79x4">
+                            <a class="Vg0L1vwJXv5JSYn-HUx0C" asp-action="Artists">ARTISTS</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="asideButton">
+                    <a class="btn btn-green btn-small asideButton-button" asp-action="NewPlaylist">NEW PLAYLIST</a>
+                </div>
+            </div>
+        </div>
+        <div class="_2ZxgeVkL10CBSK4Q8YP29g">
+            <div>
+                <section>
+                    <div class="container-fluid container-fluid--noSpaceAround">
+                        <div class="_1V5hjg9Q-uySwVgMc32TQb row">
+                            @foreach (var playlist in Model)
+                            {
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+                                    <div class="media-object" style="max-width: 300px">
+                                        <div class="hoverable">
+                                            <div class="react-contextmenu-wrapper">
+                                                <a class="cover-art shadow light actionable" asp-action="Playlist" asp-route-id="@playlist.Id">
+                                                    <div>
+                                                        <div class="icon">
+                                                            <svg width="80" height="81" viewBox="0 0 80 81" xmlns="http://www.w3.org/2000/svg"><title>Playlist Icon</title><path d="M25.6 11.565v45.38c-2.643-3.27-6.68-5.37-11.2-5.37-7.94 0-14.4 6.46-14.4 14.4s6.46 14.4 14.4 14.4 14.4-6.46 14.4-14.4v-51.82l48-10.205V47.2c-2.642-3.27-6.678-5.37-11.2-5.37-7.94 0-14.4 6.46-14.4 14.4s6.46 14.4 14.4 14.4S80 64.17 80 56.23V0L25.6 11.565zm-11.2 65.61c-6.176 0-11.2-5.025-11.2-11.2 0-6.177 5.024-11.2 11.2-11.2 6.176 0 11.2 5.023 11.2 11.2 0 6.174-5.026 11.2-11.2 11.2zm51.2-9.745c-6.176 0-11.2-5.024-11.2-11.2 0-6.174 5.024-11.2 11.2-11.2 6.176 0 11.2 5.026 11.2 11.2 0 6.178-5.026 11.2-11.2 11.2z" fill="currentColor" fill-rule="evenodd"></path></svg>
+                                                        </div>
+                                                        <div class="cover-art-image cover-art-image-loaded"></div> 
+                                                    </div>
+                                                    <button class="cover-art-playback">
+                                                        <svg class="icon-play" viewBox="0 0 85 100"><path fill="currentColor" d="M81 44.6c5 3 5 7.8 0 10.8L9 98.7c-5 3-9 .7-9-5V6.3c0-5.7 4-8 9-5l72 43.3z"><title>PLAY</title></path></svg>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                            <div class="mo-info">
+                                                <div class="react-contextmenu-wrapper">
+                                                    <a class="mo-info-name" asp-action="Playlist" asp-route-id="@playlist.Id">@playlist.Title</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @*<div class="mo-owner">
+                                            <span>By</span>
+                                            <span><a asp-controller="User" asp-action="Info" asp-route-owner="@playlist.OwnerId">@playlist.OwnerId</a></span>
+                                        </div>*@
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>

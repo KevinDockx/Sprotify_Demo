@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Sprotify.API.Models
 {
@@ -14,7 +12,7 @@ namespace Sprotify.API.Models
         public string Description { get; set; }
 
         public Guid OwnerId { get; set; }
-        public ICollection<Song> Songs { get; set; }
-            = new List<Song>();
+        public ICollection<SongInPlaylist> Songs { get; set; }
+            = new List<SongInPlaylist>();
     }
 }

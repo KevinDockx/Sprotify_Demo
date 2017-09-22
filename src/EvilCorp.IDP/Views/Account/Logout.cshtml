@@ -1,0 +1,22 @@
+﻿@model LogoutViewModel
+@{
+    Layout = "_SprotifyLayout";
+}
+
+<div class="container-fluid login">
+    <div class="content">
+        <form asp-route="Logout" novalidate="">
+            <input type="hidden" name="logoutId" value="@Model.LogoutId" />
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="text-center">Would you like to log out?</p>
+                </div>
+            </div>
+            <div class="row row-submit">
+                <div class="col-xs-12">
+                    <button class="btn btn-sm btn-block btn-green">Yes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

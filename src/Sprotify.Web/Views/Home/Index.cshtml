@@ -1,0 +1,17 @@
+﻿@inject Sprotify.Web.Services.StatsService Stats
+@{ 
+    ViewData["Title"] = "Web player";
+}
+
+<div class="hw-accelerate">
+    <section class="content playlist contentSpacing">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-lg-12 col-xl-12 col-sticky">
+                    <h2 class="_136vzZKMy7E_xDfv7uATJ_">Some statistics</h2>
+                    <p>There are @await Stats.GetPlaylistCount() playlists</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

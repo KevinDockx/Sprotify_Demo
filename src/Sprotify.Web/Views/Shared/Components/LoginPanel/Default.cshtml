@@ -1,0 +1,11 @@
+@model LoginPanelModel
+<div class="sessionInfo">
+    <div class="user-widget">
+        <a href="/settings/account">
+            <span class="user-link">@Model.Name</span>
+        </a>
+        <a asp-area="" asp-controller="Logout" asp-action="Logout">
+            <span class="user-link">(Logout)</span>
+        </a>
+    </div>
+</div>

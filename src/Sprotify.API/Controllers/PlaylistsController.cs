@@ -5,10 +5,11 @@ using Sprotify.API.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Sprotify.API.Controllers
 {
+    [Authorize]
     [Route("api/playlists")]
     public class PlaylistsController : Controller
     {
@@ -22,11 +23,24 @@ namespace Sprotify.API.Controllers
         [HttpGet]
         public IActionResult GetPlaylists()
         {
-            var playlists = _sprotifyRepository.GetPlaylists();
+            var ownerId = Guid.Parse(User.Claims.FirstOrDefault(x => x.Type == "sub").Value);
+            var playlists = _sprotifyRepository.GetPlaylistsFromUser(ownerId);
             return Ok(Mapper.Map<IEnumerable<Playlist>>(playlists));
         }
 
-        [HttpGet("{playlistId}")]
+        [HttpGet("~/api/users/{userId:guid}/playlists")]
+        public IActionResult GetPlaylistsForUser(Guid userId)
+        {
+            if (!_sprotifyRepository.UserExists(userId))
+            {
+                return NotFound();
+            }
+
+            var playlists = _sprotifyRepository.GetPlaylistsFromUser(userId);
+            return Ok(Mapper.Map<IEnumerable<Playlist>>(playlists));
+        }
+
+        [HttpGet("{playlistId}", Name = "GetPlaylist")]
         public IActionResult GetPlaylist(Guid playlistId, [FromQuery] bool expand)
         {
             var playlist = _sprotifyRepository.GetPlaylist(playlistId, expand);
@@ -43,6 +57,38 @@ namespace Sprotify.API.Controllers
             }
 
             return Ok(Mapper.Map<Playlist>(playlist));
-         }
+        }
+
+        [HttpPost("~/api/users/{userId:guid}/playlists")]
+        public IActionResult CreatePlaylist(Guid userId, [FromBody] PlaylistForCreation playlistForCreation)
+        {
+            if (playlistForCreation == null)
+            {
+                return BadRequest();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return new UnprocessableEntityObjectResult(ModelState);
+            }
+
+            var mappedPlaylist = Mapper.Map<Entities.Playlist>(playlistForCreation);
+
+            _sprotifyRepository.CreatePlaylist(userId, mappedPlaylist);
+
+            if (!_sprotifyRepository.Save())
+            {
+                throw new Exception("Creating the playlist failed.");
+            }
+
+            var createdPlaylistToReturn = Mapper.Map<Models.Playlist>(mappedPlaylist);
+
+            return CreatedAtRoute("GetPlaylist",
+                new
+                {
+                    playlistId = mappedPlaylist.Id
+                },
+                createdPlaylistToReturn);
+        }
     }
 }

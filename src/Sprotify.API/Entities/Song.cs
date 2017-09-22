@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sprotify.API.Entities
 {
@@ -16,8 +16,9 @@ namespace Sprotify.API.Entities
         [MaxLength(150)]
         public string Band { get; set; }
 
-        [ForeignKey("PlaylistId")]
-        public Playlist Playlist { get; set; }
-        public Guid PlaylistId { get; set; }
+        [Required]
+        public TimeSpan Duration { get; set; }
+
+        public virtual ICollection<PlaylistSong> Playlists { get; set; }
     }
 }
